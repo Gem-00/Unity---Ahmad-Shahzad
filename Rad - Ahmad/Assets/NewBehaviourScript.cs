@@ -31,5 +31,8 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.E))
             transform.position += Vector3.right * Time.deltaTime;
+
+
+
     }
 }
