@@ -7,6 +7,7 @@ public class NewBehaviourScript : MonoBehaviour
 {
     Animator animator;
     Rigidbody rb;
+    public GameObject snowBallCloneTemplate;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,21 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         animator.SetBool("Is Running", false);
+
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject newSnowballGO = Instantiate(snowBallCloneTemplate, transform.position + 1.5f*transform.forward + 1.5f*Vector3.up, Quaternion.identity);
+            Snow_Ball myNewSnowball = newSnowballGO.GetComponent<Snow_Ball>();
+            myNewSnowball.throwSnowball(transform);
+        }
+
+
+
+
+
         if (Input.GetKey(KeyCode.W))
+
 
         {
              transform.position += transform.forward * Time.deltaTime;
